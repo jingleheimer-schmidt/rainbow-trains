@@ -1,8 +1,15 @@
 ---------------------------------------------------------------------------------------------------
+Version: 0.0.3
+Date: 30JAN2022
+  Changes:
+    - add custom train tracking and storage to reduce the number of API calls required
+    - optimization of setting value lookups to reduce the number of API calls required
+    - minor change to the rainbow color generation script to reduce performance impact
+---------------------------------------------------------------------------------------------------
 Version: 0.0.2
 Date: 29NOV2021
   Changes:
-    - release correct version 
+    - release correct version
 ---------------------------------------------------------------------------------------------------
 Version: 0.0.1
 Date: 29NOV2021
