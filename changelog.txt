@@ -2,7 +2,7 @@
 Version: 0.0.4
 Date: TBD
   Changes:
-    - updated license
+    - updated mod license
     - removed info icons from mod setting names since base game now adds them automatically
 ---------------------------------------------------------------------------------------------------
 Version: 0.0.3
