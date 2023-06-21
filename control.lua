@@ -62,6 +62,7 @@ script.on_nth_tick(5, function(event)
   local settings = global.settings
   local rainbow_speed = settings["train-rainbow-speed"]
   if rainbow_speed == "off" then return end
+  local alpha = pallette[settings["train-rainbow-palette"]]
   local frequency = speeds[rainbow_speed]
   if global.lua_trains then
     for each, train in pairs(global.lua_trains) do
