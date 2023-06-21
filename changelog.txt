@@ -6,6 +6,7 @@ Date: TBD
     - removed info icons from mod setting names since base game now adds them automatically
     - reduced frequency of mod setting lookups
     - increased locomotive color update frequency
+    - added rainbow trains to the main menu simulations
 ---------------------------------------------------------------------------------------------------
 Version: 0.0.3
 Date: 30JAN2022
