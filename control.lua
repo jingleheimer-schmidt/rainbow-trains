@@ -16,9 +16,6 @@ local pallette = {
 }
 
 local function initialize_settings()
-  if not global.settings then
-    global.settings = {}
-  end
   local settings = settings.global
   global.settings = {}
   global.settings["train-rainbow-speed"] = settings["train-rainbow-speed"].value
