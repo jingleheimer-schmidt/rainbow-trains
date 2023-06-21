@@ -48,12 +48,6 @@ end)
 script.on_event(defines.events.on_train_created, function(event)
   global.lua_trains = global.lua_trains or {}
   global.lua_trains[event.train.id] = event.train
-  if event.old_train_id_1 then
-    global.lua_trains[event.old_train_id_1] = nil
-  end
-  if event.old_train_id_2 then
-    global.lua_trains[event.old_train_id_2] = nil
-  end
 end)
 
 local sin = math.sin
