@@ -4,6 +4,8 @@ Date: TBD
   Changes:
     - updated mod license
     - removed info icons from mod setting names since base game now adds them automatically
+    - reduced frequency of mod setting lookups
+    - increased locomotive color update frequency
 ---------------------------------------------------------------------------------------------------
 Version: 0.0.3
 Date: 30JAN2022
