@@ -60,10 +60,9 @@ script.on_nth_tick(5, function(event)
     initialize_settings()
   end
   local settings = global.settings
-  local frequency = 0.050
   local rainbow_speed = settings["train-rainbow-speed"]
-    frequency = speeds[rainbow_speed]
   if rainbow_speed == "off" then return end
+  local frequency = speeds[rainbow_speed]
   if global.lua_trains then
     for each, train in pairs(global.lua_trains) do
   -- for every, surface in pairs(game.surfaces) do
