@@ -24,8 +24,8 @@ end
 
 local function reset_trains_global()
   global.lua_trains = {}
-  for each, surface in pairs(game.surfaces) do
-    for every, train in pairs(surface.get_trains()) do
+  for _, surface in pairs(game.surfaces) do
+    for _, train in pairs(surface.get_trains()) do
       global.lua_trains[train.id] = train
     end
   end
