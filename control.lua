@@ -84,10 +84,10 @@ script.on_nth_tick(5, function(event)
           b = sin(frequency*((tick/nth_tick)+(id*10))+(pi_4))*127+128,
           a = pallette[settings["train-rainbow-palette"]],
         }
-        for front, locomotive in pairs(train.locomotives.front_movers) do
+        for _, locomotive in pairs(train.locomotives.front_movers) do
           locomotive.color = rainbow
         end
-        for back, locomotive in pairs(train.locomotives.back_movers) do
+        for _, locomotive in pairs(train.locomotives.back_movers) do
           locomotive.color = rainbow
         end
       end
