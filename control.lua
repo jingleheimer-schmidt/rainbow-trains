@@ -78,11 +78,12 @@ script.on_nth_tick(5, function(event)
         local id = train.id
         local nth_tick = event.nth_tick
         local tick = event.tick
+        local modifier = frequency * ((tick / nth_tick) + (id * 10))
         local rainbow = {
-          r = sin(frequency*((tick/nth_tick)+(id*10))+(pi_0))*127+128,
-          g = sin(frequency*((tick/nth_tick)+(id*10))+(pi_2))*127+128,
-          b = sin(frequency*((tick/nth_tick)+(id*10))+(pi_4))*127+128,
-          a = pallette[settings["train-rainbow-palette"]],
+          r = sin(modifier + pi_0) * 127 + 128,
+          g = sin(modifier + pi_2) * 127 + 128,
+          b = sin(modifier + pi_4) * 127 + 128,
+          a = alpha,
         }
         for _, locomotive in pairs(train.locomotives.front_movers) do
           locomotive.color = rainbow
