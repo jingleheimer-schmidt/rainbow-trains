@@ -46,9 +46,7 @@ script.on_init(function()
 end)
 
 script.on_event(defines.events.on_train_created, function(event)
-  if not global.lua_trains then
-    global.lua_trains = {}
-  end
+  global.lua_trains = global.lua_trains or {}
   global.lua_trains[event.train.id] = event.train
   if event.old_train_id_1 then
     global.lua_trains[event.old_train_id_1] = nil
