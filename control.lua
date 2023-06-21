@@ -63,7 +63,7 @@ local pi_0 = 0 * math.pi / 3
 local pi_2 = 2 * math.pi / 3
 local pi_4 = 4 * math.pi / 3
 
-script.on_nth_tick(10, function(event)
+script.on_nth_tick(5, function(event)
   if not global.settings then
     initialize_settings()
   end
