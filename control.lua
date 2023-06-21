@@ -23,6 +23,7 @@ local function initialize_settings()
 end
 
 local function reset_trains_global()
+  ---@type table<uint, LuaTrain>
   global.lua_trains = {}
   for _, surface in pairs(game.surfaces) do
     for _, train in pairs(surface.get_trains()) do
