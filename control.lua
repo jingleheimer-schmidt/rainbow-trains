@@ -65,14 +65,10 @@ script.on_nth_tick(5, function(event)
   local alpha = pallette[settings["train-rainbow-palette"]]
   local frequency = speeds[rainbow_speed]
   if global.lua_trains then
-    for each, train in pairs(global.lua_trains) do
-  -- for every, surface in pairs(game.surfaces) do
-  --   for each, train in pairs(surface.get_trains()) do
+    for id, train in pairs(global.lua_trains) do
       if not train.valid then
-        global.lua_trains[each] = nil
+        global.lua_trains[id] = nil
       else
-      -- if train then
-        local id = train.id
         local nth_tick = event.nth_tick
         local tick = event.tick
         local modifier = frequency * ((tick / nth_tick) + (id * 10))
