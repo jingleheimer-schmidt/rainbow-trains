@@ -65,26 +65,25 @@ script.on_nth_tick(5, function(event)
   if rainbow_speed == "off" then return end
   local alpha = pallette[settings["train-rainbow-palette"]]
   local frequency = speeds[rainbow_speed]
-  if global.lua_trains then
-    for id, train in pairs(global.lua_trains) do
-      if not train.valid then
-        global.lua_trains[id] = nil
-      else
-        local nth_tick = event.nth_tick
-        local tick = event.tick
-        local modifier = frequency * ((tick / nth_tick) + (id * 10))
-        local rainbow = {
-          r = sin(modifier + pi_0) * 127 + 128,
-          g = sin(modifier + pi_2) * 127 + 128,
-          b = sin(modifier + pi_4) * 127 + 128,
-          a = alpha,
-        }
-        for _, locomotive in pairs(train.locomotives.front_movers) do
-          locomotive.color = rainbow
-        end
-        for _, locomotive in pairs(train.locomotives.back_movers) do
-          locomotive.color = rainbow
-        end
+  global.lua_trains = global.lua_trains or {}
+  for id, train in pairs(global.lua_trains) do
+    if not train.valid then
+      global.lua_trains[id] = nil
+    else
+      local nth_tick = event.nth_tick
+      local tick = event.tick
+      local modifier = frequency * ((tick / nth_tick) + (id * 10))
+      local rainbow = {
+        r = sin(modifier + pi_0) * 127 + 128,
+        g = sin(modifier + pi_2) * 127 + 128,
+        b = sin(modifier + pi_4) * 127 + 128,
+        a = alpha,
+      }
+      for _, locomotive in pairs(train.locomotives.front_movers) do
+        locomotive.color = rainbow
+      end
+      for _, locomotive in pairs(train.locomotives.back_movers) do
+        locomotive.color = rainbow
       end
     end
   end
