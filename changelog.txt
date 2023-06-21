@@ -1,6 +1,6 @@
 ---------------------------------------------------------------------------------------------------
 Version: 0.0.4
-Date: TBD
+Date: 20JUN2023
   Changes:
     - updated mod license
     - removed info icons from mod setting names since base game now adds them automatically
