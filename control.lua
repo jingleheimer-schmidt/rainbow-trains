@@ -16,9 +16,6 @@ local themes = {
 }
 
 local function initialize_settings()
-    if not storage.settings then
-        storage.settings = {}
-    end
     local settings = settings.global
     storage.settings = {}
     storage.settings["train-rainbow-speed"] = settings["train-rainbow-speed"].value
@@ -27,10 +24,8 @@ end
 
 local function reset_trains_global()
     storage.lua_trains = {}
-    for each, surface in pairs(game.surfaces) do
-        for every, train in pairs(surface.get_trains()) do
-            storage.lua_trains[train.id] = train
-        end
+    for _, train in pairs(game.train_manager.get_trains({})) do
+        storage.lua_trains[train.id] = train
     end
 end
 
@@ -49,9 +44,7 @@ script.on_init(function()
 end)
 
 script.on_event(defines.events.on_train_created, function(event)
-    if not storage.lua_trains then
-        storage.lua_trains = {}
-    end
+    storage.lua_trains = storage.lua_trains or {}
     storage.lua_trains[event.train.id] = event.train
     if event.old_train_id_1 then
         storage.lua_trains[event.old_train_id_1] = nil
@@ -79,27 +72,27 @@ script.on_nth_tick(10, function(event)
         frequency = speeds[rainbow_speed]
     end
     if storage.lua_trains then
-        for each, train in pairs(storage.lua_trains) do
+        for train_id, train in pairs(storage.lua_trains) do
             -- for every, surface in pairs(game.surfaces) do
             --   for each, train in pairs(surface.get_trains()) do
             if not train.valid then
-                storage.lua_trains[each] = nil
+                storage.lua_trains[train_id] = nil
             else
                 -- if train then
                 local id = train.id
                 local nth_tick = event.nth_tick
                 local tick = event.tick
-                local rainbow = {
+                local rainbow_color = {
                     r = sin(frequency * ((tick / nth_tick) + (id * 10)) + (pi_0)) * 127 + 128,
                     g = sin(frequency * ((tick / nth_tick) + (id * 10)) + (pi_2)) * 127 + 128,
                     b = sin(frequency * ((tick / nth_tick) + (id * 10)) + (pi_4)) * 127 + 128,
                     a = themes[settings["train-rainbow-palette"]],
                 }
-                for front, locomotive in pairs(train.locomotives.front_movers) do
-                    locomotive.color = rainbow
+                for _, locomotive in pairs(train.locomotives.front_movers) do
+                    locomotive.color = rainbow_color
                 end
-                for back, locomotive in pairs(train.locomotives.back_movers) do
-                    locomotive.color = rainbow
+                for _, locomotive in pairs(train.locomotives.back_movers) do
+                    locomotive.color = rainbow_color
                 end
             end
         end
