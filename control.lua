@@ -7,7 +7,7 @@ local speeds = {
     veryfast = 0.200,
 }
 
-local pallette = {
+local themes = {
     pastel = 1,
     light = 64,
     default = 128,
@@ -93,7 +93,7 @@ script.on_nth_tick(10, function(event)
                     r = sin(frequency * ((tick / nth_tick) + (id * 10)) + (pi_0)) * 127 + 128,
                     g = sin(frequency * ((tick / nth_tick) + (id * 10)) + (pi_2)) * 127 + 128,
                     b = sin(frequency * ((tick / nth_tick) + (id * 10)) + (pi_4)) * 127 + 128,
-                    a = pallette[settings["train-rainbow-palette"]],
+                    a = themes[settings["train-rainbow-palette"]],
                 }
                 for front, locomotive in pairs(train.locomotives.front_movers) do
                     locomotive.color = rainbow
