@@ -73,8 +73,6 @@ script.on_nth_tick(10, function(event)
     end
     if storage.lua_trains then
         for train_id, train in pairs(storage.lua_trains) do
-            -- for every, surface in pairs(game.surfaces) do
-            --   for each, train in pairs(surface.get_trains()) do
             if not train.valid then
                 storage.lua_trains[train_id] = nil
             else
