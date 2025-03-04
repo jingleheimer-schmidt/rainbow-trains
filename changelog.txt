@@ -4,6 +4,7 @@ Date: DDMMMYYYY
   Changes:
     - added support for Factorio 2.0
     - update license to CC BY-NC-SA 4.0
+    - update mod description
   Locale:
     - renamed rainbow palette to rainbow theme
 ---------------------------------------------------------------------------------------------------
