@@ -78,7 +78,6 @@ script.on_nth_tick(10, function(event)
             if not train.valid then
                 storage.lua_trains[train_id] = nil
             else
-                -- if train then
                 local id = train.id
                 local nth_tick = event.nth_tick
                 local tick = event.tick
@@ -97,5 +96,4 @@ script.on_nth_tick(10, function(event)
             end
         end
     end
-end
-)
+end)
