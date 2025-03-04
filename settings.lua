@@ -1,4 +1,4 @@
-local rainbowSpeedSetting = {
+local rainbow_speed = {
     type = "string-setting",
     name = "train-rainbow-speed",
     setting_type = "runtime-global",
@@ -28,6 +28,6 @@ local rainbow_theme = {
 }
 
 data:extend({
-    rainbowSpeedSetting,
+    rainbow_speed,
     rainbow_theme
 })
