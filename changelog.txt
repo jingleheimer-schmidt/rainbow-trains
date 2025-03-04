@@ -3,6 +3,7 @@ Version: 0.1.0
 Date: 30JAN2022
   Changes:
     - added support for Factorio 2.0
+    - update license to CC BY-NC-SA 4.0
 ---------------------------------------------------------------------------------------------------
 Version: 0.0.3
 Date: 30JAN2022
