@@ -19,7 +19,7 @@ local function initialize_settings()
     local settings = settings.global
     storage.settings = {}
     storage.settings["train-rainbow-speed"] = settings["train-rainbow-speed"].value
-    storage.settings["train-rainbow-palette"] = settings["train-rainbow-palette"].value
+    storage.settings["train-rainbow-theme"] = settings["train-rainbow-theme"].value
 end
 
 local function reset_trains_global()
@@ -85,7 +85,7 @@ script.on_nth_tick(10, function(event)
                     r = sin(frequency * ((tick / nth_tick) + (id * 10)) + (pi_0)) * 127 + 128,
                     g = sin(frequency * ((tick / nth_tick) + (id * 10)) + (pi_2)) * 127 + 128,
                     b = sin(frequency * ((tick / nth_tick) + (id * 10)) + (pi_4)) * 127 + 128,
-                    a = themes[settings["train-rainbow-palette"]],
+                    a = themes[settings["train-rainbow-theme"]],
                 }
                 for _, locomotive in pairs(train.locomotives.front_movers) do
                     locomotive.color = rainbow_color

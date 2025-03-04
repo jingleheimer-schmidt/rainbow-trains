@@ -13,9 +13,9 @@ local rainbowSpeedSetting = {
     }
 }
 
-local rainbowPaletteSetting = {
+local rainbow_theme = {
     type = "string-setting",
-    name = "train-rainbow-palette",
+    name = "train-rainbow-theme",
     setting_type = "runtime-global",
     default_value = "default",
     allowed_values = {
@@ -29,5 +29,5 @@ local rainbowPaletteSetting = {
 
 data:extend({
     rainbowSpeedSetting,
-    rainbowPaletteSetting
+    rainbow_theme
 })
