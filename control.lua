@@ -397,7 +397,7 @@ script.on_event(defines.events.on_train_created, function(event)
     end
 end)
 
-script.on_nth_tick(10, function(event)
+script.on_nth_tick(7, function(event)
     if not storage.settings then
         initialize_settings()
     end
