@@ -3,6 +3,8 @@ Version: 0.1.0
 Date: DDMMMYYYY
   Changes:
     - added support for Factorio 2.0
+    - added pride and country flag color themes
+    - added cargo wagon coloring
     - update license to CC BY-NC-SA 4.0
     - update mod description
   Locale:
