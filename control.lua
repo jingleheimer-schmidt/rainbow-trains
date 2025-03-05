@@ -415,14 +415,13 @@ script.on_nth_tick(7, function(event)
             if not train.valid then
                 storage.lua_trains[train_id] = nil
             else
-                local id = train.id
-                local nth_tick = event.nth_tick
-                local tick = event.tick
                 for _, locomotive in pairs(train.locomotives.front_movers) do
                     locomotive.color = rainbow_color
                 end
                 for _, locomotive in pairs(train.locomotives.back_movers) do
                     locomotive.color = rainbow_color
+                local id = train_id * 5
+                local tick = event.tick / event.nth_tick
                 local rainbow_color = get_rainbow_color(tick, id, frequency, theme_name)
                 end
             end
