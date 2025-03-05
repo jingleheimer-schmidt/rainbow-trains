@@ -365,6 +365,7 @@ local function initialize_settings()
 end
 
 local function reset_trains_global()
+    ---@type {uint: LuaTrain}
     storage.lua_trains = {}
     for _, train in pairs(game.train_manager.get_trains({})) do
         storage.lua_trains[train.id] = train
