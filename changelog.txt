@@ -10,6 +10,7 @@ Date: DDMMMYYYY
     - update mod description
   Locale:
     - renamed rainbow palette to rainbow theme
+    - added mod name and description locale strings
 ---------------------------------------------------------------------------------------------------
 Version: 0.0.3
 Date: 30JAN2022
