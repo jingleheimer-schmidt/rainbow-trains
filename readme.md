@@ -1,5 +1,5 @@
 # Overview
-This mod cycles train locomotive colors through the rainbow
+This mod cycles train locomotive and wagon colors through the rainbow
 
 ----------
 # Features
