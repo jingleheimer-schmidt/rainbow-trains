@@ -1,4 +1,17 @@
 ---------------------------------------------------------------------------------------------------
+Version: 0.1.0
+Date: 05MAR2025
+  Changes:
+    - added support for Factorio 2.0
+    - added pride and country flag color themes
+    - added cargo wagon coloring
+    - added main menu simulation integration
+    - update license to CC BY-NC-SA 4.0
+    - update mod description
+  Locale:
+    - renamed rainbow palette to rainbow theme
+    - added mod name and description locale strings
+---------------------------------------------------------------------------------------------------
 Version: 0.0.3
 Date: 30JAN2022
   Changes:
